@@ -2,5 +2,5 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('endpoint/path/', views.function_to_run),
+    path('comment/<int:comment_id>/', views.get_replies_by_comment_id),
 ]
