@@ -2,10 +2,12 @@ import useCustomForm from "../../hooks/useCustomForm";
 import React, { useState } from 'react';
 import axios from "axios";
 import keys from "../../API_Keys.json";
+import { useNavigate } from "react-router-dom";
 
 const SearchPage = () => {
     const [formData, handleInputChange, handleSubmit] = useCustomForm({}, callSearch);
     const [videos, setVideos] = useState("");
+    const navigate = useNavigate();
 
     async function callSearch() {
         try {
@@ -15,6 +17,10 @@ const SearchPage = () => {
         catch (error) {
             console.log(error.response.data);
         }
+    }
+
+    function toVideoPage(video) {
+        navigate('/video', {state:{video:video}});
     }
 
     return (
@@ -34,7 +40,7 @@ const SearchPage = () => {
             </form>
             {videos &&
                 videos.map((video) => {
-                    return <div key={video.id.videoId}>
+                    return <div key={video.id.videoId} onClick={() => toVideoPage(video)}>
                         <img src={video.snippet.thumbnails.default.url} alt="video thumbnail" />
                         <p>{video.snippet.title}</p>
                         <p>{video.snippet.description}</p>
