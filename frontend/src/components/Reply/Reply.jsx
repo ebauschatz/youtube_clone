@@ -1,6 +1,8 @@
 const Reply = (props) => {
     return (
-        <div>{props.reply.text}</div>
+        <div>
+            {props.reply.text}
+        </div>
     );
 }
  
