@@ -6,7 +6,7 @@ const CommentList = (props) => {
             Comments
             {props.comments && 
                 props.comments.map((comment) => {
-                    return <Comment comment={comment} />
+                    return <Comment key={comment.id} comment={comment} token={props.token}/>
                 })
             }
         </div>
