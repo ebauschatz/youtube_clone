@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 const SearchPage = () => {
     const [formData, handleInputChange, handleSubmit] = useCustomForm({}, callSearch);
-    const [videos, setVideos] = useState("");
+    const [videos, setVideos] = useState([]);
     const navigate = useNavigate();
 
     async function callSearch() {

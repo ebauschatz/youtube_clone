@@ -4,7 +4,8 @@ import axios from "axios";
 import useAuth from "../../hooks/useAuth";
 import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
 import RelatedVideos from "../../components/RelatedVideos/RelatedVideos";
-import CommentList from "../../components/CommetList/CommentList";
+import CommentList from "../../components/CommentList/CommentList";
+import CommentForm from "../../components/CommentForm/CommentForm";
 
 const VideoPage = () => {
     const [user, token] = useAuth();
@@ -14,21 +15,47 @@ const VideoPage = () => {
     const [comments, setComments] = useState([]);
 
     useEffect(() => {
-        const getAllComments = async () => {
-            try {
-                let response = await axios.get(`http://127.0.0.1:8000/api/comments/video/${video.id.videoId}/`);
-                setComments(response.data);
-            }
-            catch (error) {
-                console.log(error.response.data);
-            }
-        };
         getAllComments();
-      }, [video.id.videoId])
+    }, [])
+
+    async function getAllComments() {
+        try {
+            let response = await axios.get(`http://127.0.0.1:8000/api/comments/video/${video.id.videoId}/`);
+            setComments(response.data);
+        }
+        catch (error) {
+            console.log(error.response.data);
+        }
+    }
+
+    async function addComment(commentText) {
+        try {
+            let response = await axios.post("http://127.0.0.1:8000/api/comments/",
+                {
+                    video_id: video.id.videoId,
+                    text: commentText,
+                    likes: 0,
+                    dislikes: 0
+                },
+                {
+                    headers: {
+                        Authorization: "Bearer " + token,
+                    },
+                }
+            );
+            if (response.status === 201) {
+                await getAllComments();
+            }
+        }
+        catch (error) {
+            console.log(error.response.data);
+        }
+    }
 
     return (
         <div>
             <VideoPlayer videoId={video.id.videoId} title={video.snippet.title} description={video.snippet.description} />
+            {token && <CommentForm user={user} addComment={addComment}/>}
             <CommentList comments={comments} token={token}/>
             <RelatedVideos videoId={video.id.videoId} />
         </div>
