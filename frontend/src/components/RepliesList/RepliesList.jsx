@@ -1,8 +1,10 @@
+import Reply from "../Reply/Reply";
+
 const RepliesList = (props) => {
     return (
         <div>
             {props.replies.map((reply) => {
-                return <div>{reply.text}</div>
+                return <Reply key={reply.id} reply={reply} />
             })}
         </div>
     );
