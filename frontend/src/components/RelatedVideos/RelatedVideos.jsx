@@ -12,8 +12,6 @@ const RelatedVideos = (props) => {
             try {
                 let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?relatedToVideoId=${props.videoId}&type=video&part=snippet&key=${keys.googleYouTubeAPIKey}`);
                 setRelatedVideos(response.data.items);
-                console.log("stuff");
-                console.log(response.data);
             } 
             catch (error) {
                 console.log(error.response.data);
