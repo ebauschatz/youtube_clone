@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import keys from "../../API_Keys.json";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import './RelatedVideos.css'
 
 const RelatedVideos = (props) => {
     const [relatedVideos, setRelatedVideos] = useState([]);
@@ -26,12 +27,14 @@ const RelatedVideos = (props) => {
 
     return (
         <div>
-            <p>RELATED VIDEOS</p>
+            <p className="sectionTitle">
+                Related Videos
+            </p>
             {relatedVideos.map((relatedVideo) => {
-                return <div key={relatedVideo.id.videoId} onClick={() => toVideoPage(relatedVideo)}>
+                return <div key={relatedVideo.id.videoId} onClick={() => toVideoPage(relatedVideo)} className="relatedVideo">
                     <img src={relatedVideo.snippet.thumbnails.default.url} alt="video thumbnail" />
-                    <p>{relatedVideo.snippet.title}</p>
-                    <p>{relatedVideo.snippet.channelTitle}</p>
+                    <p className="relatedVideoTitle">{relatedVideo.snippet.title}</p>
+                    <p className="channelTitle">{relatedVideo.snippet.channelTitle}</p>
                 </div>
             })}
         </div>

@@ -1,3 +1,5 @@
+import './VideoPlayer.css'
+
 const VideoPlayer = (props) => {
     let videoUrl = `https://www.youtube.com/embed/${props.videoId}?autoplay=0`;
     return (
@@ -12,10 +14,10 @@ const VideoPlayer = (props) => {
                 frameborder="0"
             >
             </iframe>
-            <p>
+            <p className="videoTitle">
                 {props.title}
             </p>
-            <p>
+            <p className="videoDescription">
                 {props.description}
             </p>
         </div>

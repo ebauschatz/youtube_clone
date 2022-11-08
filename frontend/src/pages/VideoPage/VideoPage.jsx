@@ -2,6 +2,7 @@ import { useLocation } from "react-router-dom";
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import useAuth from "../../hooks/useAuth";
+import './VideoPage.css'
 import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
 import RelatedVideos from "../../components/RelatedVideos/RelatedVideos";
 import CommentList from "../../components/CommentList/CommentList";
@@ -53,11 +54,15 @@ const VideoPage = () => {
     }
 
     return (
-        <div>
-            <VideoPlayer videoId={video.id.videoId} title={video.snippet.title} description={video.snippet.description} />
-            {token && <CommentForm user={user} addComment={addComment} />}
-            <CommentList comments={comments} token={token} user={user} />
-            <RelatedVideos videoId={video.id.videoId} />
+        <div className="videoPage">
+            <div className="currentVideo">
+                <VideoPlayer videoId={video.id.videoId} title={video.snippet.title} description={video.snippet.description} />
+                {token && <CommentForm user={user} addComment={addComment} />}
+                <CommentList comments={comments} token={token} user={user} />
+            </div>
+            <div className="relatedVideoList">
+                <RelatedVideos videoId={video.id.videoId} />
+            </div>
         </div>
     );
 }

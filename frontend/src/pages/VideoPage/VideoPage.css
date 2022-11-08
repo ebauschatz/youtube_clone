@@ -1,0 +1,16 @@
+.videoPage {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem;
+}
+
+.currentVideo {
+    display: flex;
+    width: 60%;
+    flex-direction: column;
+}
+
+.relatedVideoList {
+    display: flex;
+    width: 30%;
+}

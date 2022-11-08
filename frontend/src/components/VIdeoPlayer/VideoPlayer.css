@@ -1,0 +1,10 @@
+.videoTitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 0.5rem 0rem;
+}
+
+.videoDescription {
+    padding: 0.5rem 0rem;
+    font-size: 1rem;
+}
