@@ -4,7 +4,7 @@ import './CommentList.css'
 const CommentList = (props) => {
     return (
         <div>
-            <div className="commentSectionHeader">
+            <div className="comment-section-header">
                 Comments
             </div>
             {props.comments && 

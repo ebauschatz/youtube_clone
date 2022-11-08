@@ -1,16 +1,16 @@
-.videoPage {
+.video-page {
     display: flex;
     justify-content: space-between;
     margin: 2rem;
 }
 
-.currentVideo {
+.current-video {
     display: flex;
     width: 60%;
     flex-direction: column;
 }
 
-.relatedVideoList {
+.related-video-list {
     display: flex;
     width: 30%;
 }

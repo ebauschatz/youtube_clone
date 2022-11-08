@@ -27,14 +27,16 @@ const RelatedVideos = (props) => {
 
     return (
         <div>
-            <p className="sectionTitle">
+            <p className="section-title">
                 Related Videos
             </p>
             {relatedVideos.map((relatedVideo) => {
-                return <div key={relatedVideo.id.videoId} onClick={() => toVideoPage(relatedVideo)} className="relatedVideo">
-                    <img src={relatedVideo.snippet.thumbnails.default.url} alt="video thumbnail" />
-                    <p className="relatedVideoTitle">{relatedVideo.snippet.title}</p>
-                    <p className="channelTitle">{relatedVideo.snippet.channelTitle}</p>
+                return <div key={relatedVideo.id.videoId} onClick={() => toVideoPage(relatedVideo)} className="related-video">
+                    <img src={relatedVideo.snippet.thumbnails.default.url} alt="video thumbnail" className="related-video-thumbnail" />
+                    <div className="related-video-info">
+                        <div className="related-video-title">{relatedVideo.snippet.title}</div>
+                        <div className="channel-title">{relatedVideo.snippet.channelTitle}</div>
+                    </div>
                 </div>
             })}
         </div>

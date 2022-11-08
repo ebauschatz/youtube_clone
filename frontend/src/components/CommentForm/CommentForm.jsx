@@ -9,11 +9,11 @@ const CommentForm = (props) => {
     }
 
     return (
-        <form onSubmit={handleSubmit} className="commentForm">
+        <form onSubmit={handleSubmit} className="comment-form">
                 <label>
                     Add a comment as {props.user.username}:
                 </label>
-                <textarea className="commentInput"
+                <textarea className="comment-input"
                     type="text"
                     name="commentText"
                     rows="3"
@@ -21,7 +21,9 @@ const CommentForm = (props) => {
                     value={formData.commentText}
                     required={true}
                 ></textarea>
-                <button type="submit" className="submitButton">Submit</button>
+                <div className="submit-section">
+                    <button type="submit" className="submit-button">Submit</button>
+                </div>
             </form>
     );
 }

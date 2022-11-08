@@ -14,10 +14,10 @@ const VideoPlayer = (props) => {
                 frameborder="0"
             >
             </iframe>
-            <p className="videoTitle">
+            <p className="video-title">
                 {props.title}
             </p>
-            <p className="videoDescription">
+            <p className="video-description">
                 {props.description}
             </p>
         </div>

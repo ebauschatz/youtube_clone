@@ -26,26 +26,26 @@ const SearchPage = () => {
 
     return (
         <div>
-            <form onSubmit={handleSubmit} className="searchSection">
-                <label className="searchElement">
+            <form onSubmit={handleSubmit} className="search-section">
+                <label className="search-element">
                     Search for a Video:
                 </label>
-                <input className="searchElement"
+                <input className="search-element"
                     type="text"
                     name="search"
                     onChange={handleInputChange}
                     value={formData.search}
                     required={true}
                 />
-                <button className="searchButton" type="submit">Search</button>
+                <button className="search-button" type="submit">Search</button>
             </form>
             {videos &&
                 
                 videos.map((video) => {
-                    return <div key={video.id.videoId} onClick={() => toVideoPage(video)} className="searchResultsList">
+                    return <div key={video.id.videoId} onClick={() => toVideoPage(video)} className="search-results-list">
                         <img src={video.snippet.thumbnails.medium.url} alt="video thumbnail" />
                         <p>{video.snippet.title}</p>
-                        <p className="searchResultDescription">{video.snippet.description}</p>
+                        <p className="search-result-description">{video.snippet.description}</p>
                     </div>
                 })
             }

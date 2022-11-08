@@ -1,4 +1,4 @@
-.searchSection {
+.search-section {
     display: flex;
     flex-direction: column;
     width: 50%;
@@ -6,17 +6,17 @@
     margin: auto;
 }
 
-.searchElement {
+.search-element {
     padding: 0.2rem 0rem;
     text-align: center;
 }
 
-.searchButton {
+.search-button {
     margin: 0.5rem 0rem;
     padding: 0.2rem 0.5rem;
 }
 
-.searchResultsList {
+.search-results-list {
     display: flex;
     flex-direction: column;
     width: 60%;
@@ -25,6 +25,6 @@
     margin: 3rem auto;
 }
 
-.searchResultDescription {
+.search-result-description {
     font-size: 0.75rem;
 }

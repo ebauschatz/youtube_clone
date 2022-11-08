@@ -54,13 +54,13 @@ const VideoPage = () => {
     }
 
     return (
-        <div className="videoPage">
-            <div className="currentVideo">
+        <div className="video-page">
+            <div className="current-video">
                 <VideoPlayer videoId={video.id.videoId} title={video.snippet.title} description={video.snippet.description} />
                 {token && <CommentForm user={user} addComment={addComment} />}
                 <CommentList comments={comments} token={token} user={user} />
             </div>
-            <div className="relatedVideoList">
+            <div className="related-video-list">
                 <RelatedVideos videoId={video.id.videoId} />
             </div>
         </div>
