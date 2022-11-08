@@ -17,7 +17,7 @@ const VideoPage = () => {
 
     useEffect(() => {
         getAllComments();
-    }, [])
+    }, [video.id.videoId])
 
     async function getAllComments() {
         try {

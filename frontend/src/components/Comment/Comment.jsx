@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import RepliesList from '../RepliesList/RepliesList'
 import ReplyForm from '../ReplyForm/ReplyForm';
+import './Comment.css'
 
 const Comment = (props) => {
     const [replies, setReplies] = useState([]);
@@ -51,11 +52,19 @@ const Comment = (props) => {
     }
 
     return (
-        <div>
-            <p>{props.comment.text}</p>
-            <p>{props.comment.likes}</p>
-            <p>{props.comment.dislikes}</p>
-            {props.token && <RepliesList replies={replies}/>}
+        <div className="comment-container">
+            <p className="comment-text">
+                {props.comment.text}
+            </p>
+            <div className="reactions-section">
+                <div className="reaction">
+                <i class="fa fa-thumbs-up like-indicator"></i> ({props.comment.likes})
+                </div>
+                <div className="reaction">
+                <i class="fa fa-thumbs-down dislike-indicator"></i> ({props.comment.dislikes})
+                </div>
+            </div>
+            {props.token && replies[0] && <RepliesList replies={replies}/>}
             {props.token && <ReplyForm user={props.user} addReply={addReply} />}
         </div>
     );

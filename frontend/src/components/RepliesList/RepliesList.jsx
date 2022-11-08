@@ -1,8 +1,10 @@
 import Reply from "../Reply/Reply";
+import './RepliesList.css'
 
 const RepliesList = (props) => {
     return (
-        <div>
+        <div className="replies-container">
+            <div>Replies</div>
             {props.replies.map((reply) => {
                 return <Reply key={reply.id} reply={reply} />
             })}

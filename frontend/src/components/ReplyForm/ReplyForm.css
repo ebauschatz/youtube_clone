@@ -1,0 +1,38 @@
+.reply-form-container {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.reply-arrow {
+    padding: 0rem 0.5rem;
+    color: #7354d3;
+    font-size: 1rem;
+}
+
+.reply-text {
+    padding: 0.1rem;
+    font-size: 0.75rem;
+    resize: none;
+    width: 100%;
+}
+
+.submit-reply-button {
+    font-size: 0.8rem;
+    padding: 0.1rem 0.2rem;
+    margin: 0.2rem;
+}
+
+.submit-section {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.text-section {
+    display: flex;
+    align-items: center;
+    padding: 0.2rem;
+}

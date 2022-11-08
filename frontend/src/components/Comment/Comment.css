@@ -1,0 +1,37 @@
+.comment-container {
+    margin: 1.5rem;
+    padding: 0.5rem;
+    box-shadow: 3px 3px 10px #7354d3
+}
+
+.reactions-section {
+    font-size: 0.75rem;
+    display: flex;
+    padding: 0.25rem;
+}
+
+.reaction {
+    padding: 0rem 0.5rem;
+}
+
+.like-indicator {
+    color: #7d7691;
+}
+
+.like-indicator:hover {
+    color: green;
+}
+
+.dislike-indicator {
+    color: #7d7691;
+}
+
+.dislike-indicator:hover {
+    color:  red;
+}
+
+.comment-text {
+    border-bottom: 1px dashed #7354d3;
+    padding: 0.5rem;
+    font-size: 1rem;
+}
