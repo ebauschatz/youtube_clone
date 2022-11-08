@@ -1,0 +1,30 @@
+.searchSection {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+    margin: auto;
+}
+
+.searchElement {
+    padding: 0.2rem 0rem;
+    text-align: center;
+}
+
+.searchButton {
+    margin: 0.5rem 0rem;
+    padding: 0.2rem 0.5rem;
+}
+
+.searchResultsList {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    align-items: center;
+    text-align: center;
+    margin: 3rem auto;
+}
+
+.searchResultDescription {
+    font-size: 0.75rem;
+}

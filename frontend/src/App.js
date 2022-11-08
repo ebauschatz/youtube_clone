@@ -34,7 +34,6 @@ function App() {
         <Route path="/search" element={<SearchPage />} />
         <Route path="/video" element={<VideoPage />} />
       </Routes>
-      <Footer />
     </div>
   );
 }

@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import axios from "axios";
 import keys from "../../API_Keys.json";
 import { useNavigate } from "react-router-dom";
+import './SearchPage.css'
 
 const SearchPage = () => {
     const [formData, handleInputChange, handleSubmit] = useCustomForm({}, callSearch);
@@ -25,25 +26,26 @@ const SearchPage = () => {
 
     return (
         <div>
-            <form onSubmit={handleSubmit}>
-                <label>
+            <form onSubmit={handleSubmit} className="searchSection">
+                <label className="searchElement">
                     Search for a Video:
-                    <input 
-                        type="text"
-                        name="search"
-                        onChange={handleInputChange}
-                        value={formData.search}
-                        required={true}
-                    />
                 </label>
-                <button type="submit">Search</button>
+                <input className="searchElement"
+                    type="text"
+                    name="search"
+                    onChange={handleInputChange}
+                    value={formData.search}
+                    required={true}
+                />
+                <button className="searchButton" type="submit">Search</button>
             </form>
             {videos &&
+                
                 videos.map((video) => {
-                    return <div key={video.id.videoId} onClick={() => toVideoPage(video)}>
-                        <img src={video.snippet.thumbnails.default.url} alt="video thumbnail" />
+                    return <div key={video.id.videoId} onClick={() => toVideoPage(video)} className="searchResultsList">
+                        <img src={video.snippet.thumbnails.medium.url} alt="video thumbnail" />
                         <p>{video.snippet.title}</p>
-                        <p>{video.snippet.description}</p>
+                        <p className="searchResultDescription">{video.snippet.description}</p>
                     </div>
                 })
             }
