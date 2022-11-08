@@ -1,0 +1,20 @@
+.submit-button {
+    padding: 0.1rem 0.5rem;
+}
+
+.comment-form {
+    margin: 2rem 0rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-input {
+    resize: none;
+    padding: 0.25rem;
+    margin: 0.25rem 0rem;
+}
+
+.submit-section {
+    display: flex;
+    justify-content: flex-end;
+}

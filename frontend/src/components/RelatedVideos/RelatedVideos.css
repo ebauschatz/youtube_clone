@@ -1,0 +1,28 @@
+.related-video {
+    margin: 1rem;
+    display: flex;
+}
+
+.related-video-info {
+    padding-left: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.section-title {
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.related-video-title {
+    font-size: 1rem;
+}
+
+.channel-title {
+    font-size: 0.75rem;
+}
+
+.related-video-thumbnail {
+    object-fit: contain;
+}

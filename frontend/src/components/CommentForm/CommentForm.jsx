@@ -1,4 +1,5 @@
 import useCustomForm from "../../hooks/useCustomForm";
+import './CommentForm.css'
 
 const CommentForm = (props) => {
     const [formData, handleInputChange, handleSubmit] = useCustomForm({}, submitComment);
@@ -8,18 +9,21 @@ const CommentForm = (props) => {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="comment-form">
                 <label>
                     Add a comment as {props.user.username}:
-                    <input 
-                        type="text"
-                        name="commentText"
-                        onChange={handleInputChange}
-                        value={formData.commentText}
-                        required={true}
-                    />
                 </label>
-                <button type="submit">Submit</button>
+                <textarea className="comment-input"
+                    type="text"
+                    name="commentText"
+                    rows="3"
+                    onChange={handleInputChange}
+                    value={formData.commentText}
+                    required={true}
+                ></textarea>
+                <div className="submit-section">
+                    <button type="submit" className="submit-button">Submit</button>
+                </div>
             </form>
     );
 }

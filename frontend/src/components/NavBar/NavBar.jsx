@@ -10,16 +10,18 @@ const Navbar = () => {
   return (
     <div className="navBar">
       <ul>
-        <li className="brand">
-          <Link to="/" style={{ textDecoration: "none", color: "white" }}>
-            <b>Home</b>
-          </Link>
-        </li>
-        <li className="brand">
-          <Link to="/search" style={{ textDecoration: "none", color: "white" }}>
-            <b>Search</b>
-          </Link>
-        </li>
+        <div className="navSection">
+          <li className="brand">
+            <Link to="/" style={{ textDecoration: "none", color: "white" }}>
+              <b>Home</b>
+            </Link>
+          </li>
+          <li className="brand">
+            <Link to="/search" style={{ textDecoration: "none", color: "white" }}>
+              <b>Search</b>
+            </Link>
+          </li>
+        </div>
         <li>
           {user ? (
             <button onClick={logoutUser}>Logout</button>

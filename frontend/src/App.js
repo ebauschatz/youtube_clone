@@ -11,7 +11,6 @@ import VideoPage from "./pages/VideoPage/VideoPage";
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
-import Footer from "./components/Footer/Footer";
 
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
@@ -34,7 +33,6 @@ function App() {
         <Route path="/search" element={<SearchPage />} />
         <Route path="/video" element={<VideoPage />} />
       </Routes>
-      <Footer />
     </div>
   );
 }
