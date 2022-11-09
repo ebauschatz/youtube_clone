@@ -58,7 +58,17 @@ const Comment = (props) => {
             likes: comment.likes + 1,
             dislikes: comment.dislikes
         }
-        props.likeComment(comment.id, newComment);
+        props.reactToComment(comment.id, newComment);
+    }
+
+    function handleDisikeClick(comment) {
+        let newComment = {
+            video_id: comment.video_id,
+            text: comment.text,
+            likes: comment.likes,
+            dislikes: comment.dislikes + 1
+        }
+        props.reactToComment(comment.id, newComment);
     }
 
     return (
@@ -71,7 +81,7 @@ const Comment = (props) => {
                 <i className="fa fa-thumbs-up like-indicator" onClick={() => handleLikeClick(props.comment)}></i> ({props.comment.likes})
                 </div>
                 <div className="reaction">
-                <i className="fa fa-thumbs-down dislike-indicator"></i> ({props.comment.dislikes})
+                <i className="fa fa-thumbs-down dislike-indicator" onClick={() => handleDisikeClick(props.comment)}></i> ({props.comment.dislikes})
                 </div>
             </div>
             {props.token && replies[0] && <RepliesList replies={replies}/>}
