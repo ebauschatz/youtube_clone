@@ -9,7 +9,7 @@ const CommentList = (props) => {
             </div>
             {props.comments && 
                 props.comments.map((comment) => {
-                    return <Comment key={comment.id} comment={comment} token={props.token} user={props.user} />
+                    return <Comment key={comment.id} comment={comment} token={props.token} user={props.user} likeComment={props.likeComment} />
                 })
             }
         </div>

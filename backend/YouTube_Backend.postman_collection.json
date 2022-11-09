@@ -306,7 +306,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"video_id\": \"tpWdzXJObZ0\",\r\n    \"text\": \"tasty tricky treats!\",\r\n    \"likes\": 0,\r\n    \"dislikes\": 0\r\n}",
+							"raw": "{\r\n    \"video_id\": \"tpWdzXJObZ0\",\r\n    \"text\": \"tasty tricky treats!\",\r\n    \"likes\": 4,\r\n    \"dislikes\": 0\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -327,70 +327,6 @@
 								"api",
 								"comments",
 								"4",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Like Comment (protected)",
-					"request": {
-						"method": "PATCH",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY4MTk3MzE5LCJpYXQiOjE2NjczMzMzMTksImp0aSI6ImJmNzhhOTQ5YTI1NTRhOWFiOGI4ZWNkMzc2MmUxMzU1IiwidXNlcl9pZCI6MiwidXNlcm5hbWUiOiJ1c2VyIiwiZmlyc3RfbmFtZSI6IlRlc3QifQ.96MDo4rjgOJy7q2s4gUHw4Kh1GvSyvWV1HPKiG0QtQE",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/comments/like/1/",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"comments",
-								"like",
-								"1",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Dislike Comment (protected)",
-					"request": {
-						"method": "PATCH",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY4MTk3MzE5LCJpYXQiOjE2NjczMzMzMTksImp0aSI6ImJmNzhhOTQ5YTI1NTRhOWFiOGI4ZWNkMzc2MmUxMzU1IiwidXNlcl9pZCI6MiwidXNlcm5hbWUiOiJ1c2VyIiwiZmlyc3RfbmFtZSI6IlRlc3QifQ.96MDo4rjgOJy7q2s4gUHw4Kh1GvSyvWV1HPKiG0QtQE",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/comments/dislike/7/",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"comments",
-								"dislike",
-								"7",
 								""
 							]
 						}
