@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "1428603c-55cf-4843-b7c8-a3a87a35af78",
-		"name": "DRF_JWT_Backend",
+		"name": "YouTube_Backend",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "23480213"
 	},
@@ -306,7 +306,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"video_id\": \"tpWdzXJObZ0\",\r\n    \"text\": \"tasty tricky treats!\",\r\n    \"likes\": 0,\r\n    \"dislikes\": 0\r\n}",
+							"raw": "{\r\n    \"video_id\": \"tpWdzXJObZ0\",\r\n    \"text\": \"tasty tricky treats!\",\r\n    \"likes\": 4,\r\n    \"dislikes\": 0\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"

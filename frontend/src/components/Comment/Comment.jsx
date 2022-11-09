@@ -51,6 +51,26 @@ const Comment = (props) => {
         }
     }
 
+    function handleLikeClick(comment) {
+        let newComment = {
+            video_id: comment.video_id,
+            text: comment.text,
+            likes: comment.likes + 1,
+            dislikes: comment.dislikes
+        }
+        props.reactToComment(comment.id, newComment);
+    }
+
+    function handleDisikeClick(comment) {
+        let newComment = {
+            video_id: comment.video_id,
+            text: comment.text,
+            likes: comment.likes,
+            dislikes: comment.dislikes + 1
+        }
+        props.reactToComment(comment.id, newComment);
+    }
+
     return (
         <div className="comment-container">
             <p className="comment-text">
@@ -58,10 +78,10 @@ const Comment = (props) => {
             </p>
             <div className="reactions-section">
                 <div className="reaction">
-                <i class="fa fa-thumbs-up like-indicator"></i> ({props.comment.likes})
+                <i className="fa fa-thumbs-up like-indicator" onClick={() => handleLikeClick(props.comment)}></i> ({props.comment.likes})
                 </div>
                 <div className="reaction">
-                <i class="fa fa-thumbs-down dislike-indicator"></i> ({props.comment.dislikes})
+                <i className="fa fa-thumbs-down dislike-indicator" onClick={() => handleDisikeClick(props.comment)}></i> ({props.comment.dislikes})
                 </div>
             </div>
             {props.token && replies[0] && <RepliesList replies={replies}/>}

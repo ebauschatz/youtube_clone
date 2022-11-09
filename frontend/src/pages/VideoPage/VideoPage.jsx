@@ -53,12 +53,31 @@ const VideoPage = () => {
         }
     }
 
+    async function reactToComment(commentId, updatedComment) {
+        try {
+            let response = await axios.put(`http://127.0.0.1:8000/api/comments/${commentId}/`,
+                updatedComment,
+                {
+                    headers: {
+                        Authorization: "Bearer " + token,
+                    },
+                }
+            );
+            if (response.status === 200) {
+                await getAllComments();
+            }
+        }
+        catch (error) {
+            console.log(error.response.data);
+        }
+    }
+
     return (
         <div className="video-page">
             <div className="current-video">
                 <VideoPlayer videoId={video.id.videoId} title={video.snippet.title} description={video.snippet.description} />
                 {token && <CommentForm user={user} addComment={addComment} />}
-                <CommentList comments={comments} token={token} user={user} />
+                <CommentList comments={comments} token={token} user={user} reactToComment={reactToComment} />
             </div>
             <div className="related-video-list">
                 <RelatedVideos videoId={video.id.videoId} />
