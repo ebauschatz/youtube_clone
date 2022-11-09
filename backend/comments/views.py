@@ -34,3 +34,27 @@ def update_comment(request, comment_id):
         serializer.save(user=request.user)
         return Response(serializer.data, status=status.HTTP_200_OK)
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['PATCH'])
+@permission_classes([IsAuthenticated])
+def like_comment(request, comment_id):
+    comment = get_object_or_404(Comment, id=comment_id)
+    new_likes = {'likes': comment.likes + 1}
+    serializer = CommentSerializer(comment, data=new_likes, partial=True)
+    if serializer.is_valid():
+        serializer.save(user=request.user)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['PATCH'])
+@permission_classes([IsAuthenticated])
+def dislike_comment(request, comment_id):
+    comment = get_object_or_404(Comment, id=comment_id)
+    new_dislikes = {'dislikes': comment.likes + 1}
+    serializer = CommentSerializer(comment, data=new_dislikes, partial=True)
+    if serializer.is_valid():
+        serializer.save(user=request.user)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
