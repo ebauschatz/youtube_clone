@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "1428603c-55cf-4843-b7c8-a3a87a35af78",
-		"name": "DRF_JWT_Backend",
+		"name": "YouTube_Backend",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "23480213"
 	},
@@ -327,6 +327,70 @@
 								"api",
 								"comments",
 								"4",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Like Comment (protected)",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY4MTk3MzE5LCJpYXQiOjE2NjczMzMzMTksImp0aSI6ImJmNzhhOTQ5YTI1NTRhOWFiOGI4ZWNkMzc2MmUxMzU1IiwidXNlcl9pZCI6MiwidXNlcm5hbWUiOiJ1c2VyIiwiZmlyc3RfbmFtZSI6IlRlc3QifQ.96MDo4rjgOJy7q2s4gUHw4Kh1GvSyvWV1HPKiG0QtQE",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/comments/like/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"comments",
+								"like",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dislike Comment (protected)",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY4MTk3MzE5LCJpYXQiOjE2NjczMzMzMTksImp0aSI6ImJmNzhhOTQ5YTI1NTRhOWFiOGI4ZWNkMzc2MmUxMzU1IiwidXNlcl9pZCI6MiwidXNlcm5hbWUiOiJ1c2VyIiwiZmlyc3RfbmFtZSI6IlRlc3QifQ.96MDo4rjgOJy7q2s4gUHw4Kh1GvSyvWV1HPKiG0QtQE",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/comments/dislike/7/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"comments",
+								"dislike",
+								"7",
 								""
 							]
 						}
